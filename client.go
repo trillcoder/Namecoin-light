@@ -50,6 +50,13 @@ func main() {
 	//intialize the struct
 	args := new(Nmc_request)
 
+	//just adding some simple error checking
+	//when i tried to run this program blindly i just got a fail
+	//should do some additional testing for acceptable commands/values
+	if(len(os.Args) != 3){
+		log.Fatal("Requires two arguments: Command and Value, respectively")
+	}
+	
 	args.Command = os.Args[1]
 	args.Value = os.Args[2]
 
